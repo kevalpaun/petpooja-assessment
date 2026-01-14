@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "f3c80039-6de3-43b4-9dfa-5edb2d4fd88e",
+		"name": "Petpooja Assesment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29387598"
+	},
+	"item": [
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "Add Department",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"IT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/departments",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Departments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/departments",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Department",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/departments/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"department_id\": 1,\r\n  \"name\": \"Keval Paun\",\r\n  \"dob\": \"2003-03-12\",\r\n  \"phone\": \"9316616107\",\r\n  \"email\": \"kevalpaun1203@gmail.com\",\r\n  \"salary\": 75000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/employees",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/employees?page=1&limit=2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"employees"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"department_id\": 1,\r\n  \"name\": \"Keval B. Paun\",\r\n  \"dob\": \"2000-05-10\",\r\n  \"phone\": \"9999999999\",\r\n  \"email\": \"keval@gmail.com\",\r\n  \"salary\": 90000\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/employees/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/employees/1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Employee With Photo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "department_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/employees",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/employees/3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"employees",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "Department-highest-salary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/statistics/department-highest-salary",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"statistics",
+								"department-highest-salary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Salary-range",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/statistics/salary-range",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"statistics",
+								"salary-range"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Youngest-employee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/statistics/youngest-employee",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"statistics",
+								"youngest-employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server Running Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
